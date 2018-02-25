@@ -2,6 +2,9 @@
   "intents": [
     {
       "intent": "GetJacobName"
+    },
+    {
+      "intent": "FitnessGrahamPacer"
     }
   ]
 }

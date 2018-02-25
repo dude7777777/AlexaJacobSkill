@@ -33,6 +33,15 @@ exports.handler = (event, context) => {
             );
             break;
 
+          case "FitnessGrahamPacer":
+            context.succeed(
+              generateResponse(
+                buildSpeechletResponse("The FitnessGram Pacer Test is a multistage aerobic capacity test that progressively gets more difficult as it continues.", true),
+                {}
+              )
+            );
+            break;
+
           default:
             throw "Invalid intent";
         }
