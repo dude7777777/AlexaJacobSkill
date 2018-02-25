@@ -34,12 +34,12 @@ exports.handler = (event, context) => {
     }
 
   } catch (error) {
-    context.fail("Exception: #{error}")
+    context.fail("Exception: #{error}");
   }
-}
+};
 
 // Helpers
-buildSpeechletResponse = (outputText, shouldEndSession) => {
+let buildSpeechletResponse = (outputText, shouldEndSession) => {
 
   return {
     outputSpeech: {
@@ -47,16 +47,16 @@ buildSpeechletResponse = (outputText, shouldEndSession) => {
       text: outputText
     },
     shouldEndSession: shouldEndSession
-  }
+  };
 
-}
+};
 
-generateResponse = (sessionAttributes, speechletResponse) => {
+let generateResponse = (sessionAttributes, speechletResponse) => {
 
   return {
     return: "1.0",
     sessionAttributes: sessionAttributes,
     response: speechletResponse
-  }
+  };
 
-}
+};
