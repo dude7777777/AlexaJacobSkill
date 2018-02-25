@@ -13,7 +13,7 @@ exports.handler = (event, context) => {
         console.log("LAUNCH REQUEST");
         context.succeed(
           generateResponse(
-            buildSpeechletResponse("Welcome to Marco Polo", true),
+            buildSpeechletResponse("Hello Jacob", true),
             {}
           )
         );
@@ -22,6 +22,20 @@ exports.handler = (event, context) => {
       case "IntentRequest":
         // > Intent Request
         console.log("INTENT REQUEST");
+
+        switch (event.request.intent.name) {
+          case "JacobData":
+            context.succeed(
+              generateResponse(
+                buildSpeechletResponse("You are Jacob", true),
+                {}
+              )
+            );
+            break;
+
+          default:
+            throw "Invalid intent";
+        }
         break;
 
       case "SessionEndedRequest":
@@ -44,17 +58,17 @@ let buildSpeechletResponse = (outputText, shouldEndSession) => {
   return {
     outputSpeech: {
       type: "PlainText",
-      text: outputText
+      text: outputText,
     },
     shouldEndSession: shouldEndSession
   };
 
 };
 
-let generateResponse = (sessionAttributes, speechletResponse) => {
+let generateResponse = (speechletResponse, sessionAttributes) => {
 
   return {
-    return: "1.0",
+    version: "1.0",
     sessionAttributes: sessionAttributes,
     response: speechletResponse
   };
