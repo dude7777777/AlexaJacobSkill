@@ -24,7 +24,7 @@ exports.handler = (event, context) => {
         console.log("INTENT REQUEST");
 
         switch (event.request.intent.name) {
-          case "JacobData":
+          case "GetJacobName":
             context.succeed(
               generateResponse(
                 buildSpeechletResponse("You are Jacob", true),

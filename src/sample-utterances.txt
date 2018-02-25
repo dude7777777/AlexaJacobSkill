@@ -1,4 +1,4 @@
-JacobData Who am I
-JacobData What am I
-JacobData Where am I
-JacobData When am I
+GetJacobName what is my name
+GetJacobName what am I
+GetJacobName who am i
+GetJacobName what do people call me
